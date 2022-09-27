@@ -20,6 +20,9 @@ err := db.Table("my-table").Get("hash", "123").SortBy("sort","321").All(ctx, &re
 
 // Get By Hash and Sort key
 err := db.Table("my-table").Get("hash", "123").SortBy("sort","321").One(ctx, &result)
+
+// Create item
+err := db.Table("my-table").Create(ctx, data)
 ```
 
 ## Author

@@ -1,5 +1,7 @@
 package dynamo
 
+import "context"
+
 type table struct {
 	name string
 	db   *DB
@@ -33,4 +35,9 @@ func (table table) Update(hash string, hashValue interface{}, sort string, sortV
 	}
 
 	return q
+}
+
+func (table table) Create(ctx context.Context, item interface{}) error {
+	tb := &Create{table: table}
+	return tb.Run(ctx, item)
 }
