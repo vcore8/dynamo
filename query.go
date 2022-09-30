@@ -113,5 +113,9 @@ func (query *Query) One(ctx context.Context, out interface{}) (err error) {
 		return
 	}
 
+	if len(response.Item) == 0 {
+		return NotFound
+	}
+
 	return attributevalue.UnmarshalMap(response.Item, &out)
 }
