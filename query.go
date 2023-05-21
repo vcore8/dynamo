@@ -97,7 +97,10 @@ func (query *Query) Scan(ctx context.Context, out interface{}) (err error) {
 func (query *Query) One(ctx context.Context, out interface{}) (err error) {
 	selectedKeys := map[string]interface{}{
 		query.hashKey: query.hashValue,
-		query.sortKey: query.sortValue,
+	}
+
+	if query.sortKey != "" {
+		selectedKeys[query.sortKey] = query.sortValue
 	}
 
 	key, err := attributevalue.MarshalMap(selectedKeys)
