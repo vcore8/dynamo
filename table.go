@@ -24,13 +24,11 @@ func (table table) Get(name string, value interface{}) *Query {
 	return q
 }
 
-func (table table) Update(hash string, hashValue interface{}, sort string, sortValue interface{}) *Update {
+func (table table) Update(hash string, hashValue interface{}) *Update {
 	q := &Update{
 		table:      table,
 		hashKey:    hash,
 		hashValue:  hashValue,
-		sortKey:    sort,
-		sortValue:  sortValue,
 		removeExpr: []string{},
 	}
 
