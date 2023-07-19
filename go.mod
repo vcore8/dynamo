@@ -1,6 +1,6 @@
-module gitlab.com/csurface/libraries/dynamo.git
+module github.com/vcore8/dynamo
 
-go 1.20
+go 1.19
 
 require (
 	github.com/aws/aws-sdk-go-v2 v1.16.15
