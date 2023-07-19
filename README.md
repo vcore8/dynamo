@@ -5,7 +5,7 @@ Project to easy connect on AWS Dynamo
 ## install
 
 ```bash
-go get https://github.com/vcore8/dynamo.git
+go get https://gitlab.com/csurface/libraries/dynamo.git
 ```
 
 ## how to use
